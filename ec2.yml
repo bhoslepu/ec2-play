@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+     - name: Provision of a instances
+       ec2:
+         instance_type: t2.micro
+         ec2_region: ap-southeast-1
+         image: "ami-d44b4286"
+         wait: true
+         count: 1
+         instance_tags:
+            Name: Demo
+       register: ec2

@@ -45,4 +45,4 @@
     - name: Pull docker image
       shell: docker pull khandu443/ngclassifieds:v9
     - name: Run Docker image
-      shell: docker -dit -p 80:80 khandu443/ngclassifieds:v9
+      shell: docker run -p 80:80 -dit khandu443/ngclassifieds:v9

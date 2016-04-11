@@ -43,8 +43,6 @@
     - name: Add docker credentials for ec2-user user
       copy: src=/var/lib/jenkins/.docker/config.json dest=/home/ec2-user/.docker/config.json
     - name: Pull docker image
-      shell: docker pull khandu443/ngclassifieds
-    - name: Tag docker image
-      shell: docker tag khandu443/ngclassifieds demo
+      shell: docker pull khandu443/ngclassifieds:v9
     - name: Run Docker image
-      shell: docker -dit -p 80:80 demo
+      shell: docker -dit -p 80:80 khandu443/ngclassifieds:v9
